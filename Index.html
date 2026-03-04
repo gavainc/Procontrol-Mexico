@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procontrol - Tarjeta Digital</title>
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #333;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #2d3436;
+            --whatsapp: #25D366;
+            --facebook: #1877F2;
+            --instagram: #E4405F;
+            --email: #EA4335;
+            --phone: #34A853;
+            --map: #4285F4;
+            --map-alt: #fbbc05;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 40px 24px 30px 24px;
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .button-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-label {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b2bec3;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 20px;
+            border-radius: 14px;
+            transition: transform 0.2s, filter 0.2s;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn i {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .btn-text span {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Colores de Botones */
+        .btn-whatsapp { background-color: var(--whatsapp); }
+        .btn-location { background-color: var(--map); }
+        .btn-location-alt { background-color: var(--map-alt); color: #333; }
+        .btn-facebook { background-color: var(--facebook); }
+        .btn-instagram { background-color: var(--instagram); }
+
+        /* Certificaciones resaltadas */
+        .certs-section {
+            margin-top: 30px;
+            padding: 20px 15px;
+            border-top: 1px solid #eee;
+            background-color: #fafbfc;
+            border-radius: 16px;
+        }
+
+        .certs-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #b2bec3;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
+
+        .cert-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .cert-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Se elimina el grayscale para resaltar los logos ISO */
+            filter: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-item:hover img {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Logo de la empresa -->
+        <div class="logo-container">
+            <img src="https://procontrolmexico.com/wp-content/uploads/2021/05/logo_procontrol_grande.png" 
+                 alt="Logo Procontrol" 
+                 class="logo"
+                 onerror="this.src='https://via.placeholder.com/200x80?text=Procontrol'">
+        </div>
+
+        <div class="button-grid">
+            <div class="section-label">WhatsApp</div>
+            
+            <!-- Botón WhatsApp CDMX -->
+            <a href="https://wa.me/525539084233?text=Hola%2C%20me%20interesa%20consultar%20tus%20servicios" class="btn btn-whatsapp" target="_blank">
+                <i data-lucide="message-square"></i>
+                <div class="btn-text">
+                    Atención CDMX e Interior
+                    <span>55 3908 4233</span>
+                </div>
+            </a>
+
+            <!-- Botón WhatsApp Yucatán -->
+            <a href="https://wa.me/529993923042?text=Hola%2C%20me%20interesa%20consultar%20tus%20servicios" class="btn btn-whatsapp" target="_blank">
+                <i data-lucide="message-square"></i>
+                <div class="btn-text">
+                    Atención Península de Yucatán
+                    <span>99 9392 3042</span>
+                </div>
+            </a>
+
+            <div class="section-label">Ubicaciones</div>
+
+            <!-- Botón Ubicación Matriz -->
+            <a href="https://www.google.com/maps/search/HP4V%2B7R+Cdad.+L%C3%B3pez+Mateos,+Estado+de+M%C3%A9xico" target="_blank" class="btn btn-location">
+                <i data-lucide="map-pin"></i>
+                <div class="btn-text">
+                    Nuestra Ubicación Matriz
+                    <span>Edo. de México</span>
+                </div>
+            </a>
+
+            <!-- Botón Ubicación Mérida -->
+            <a href="https://maps.app.goo.gl/78hWenschpWatF3a6" target="_blank" class="btn btn-location-alt">
+                <i data-lucide="map"></i>
+                <div class="btn-text">
+                    Nuestra Ubicación Mérida
+                    <span>Yucatán</span>
+                </div>
+            </a>
+
+            <div class="section-label">Redes Sociales</div>
+
+            <!-- Botón Facebook -->
+            <a href="https://www.facebook.com/procontrolmex/?locale=es_LA" target="_blank" class="btn btn-facebook">
+                <i data-lucide="facebook"></i> Facebook
+            </a>
+
+            <!-- Botón Instagram -->
+            <a href="https://www.instagram.com/procontrol_mexico/" target="_blank" class="btn btn-instagram">
+                <i data-lucide="instagram"></i> Instagram
+            </a>
+        </div>
+
+        <!-- Sección de Certificaciones Resaltada -->
+        <div class="certs-section">
+            <div class="certs-title">Certificaciones</div>
+            <div class="certs-grid">
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT1.png" alt="Certificación ISO">
+                </div>
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/elementor/thumbs/certificaciones_procontrol_2023-q69yf0ne65szvadhx7amt0og7upod0uiu1g4n0je1c.png" alt="Certificación ISO 2023">
+                </div>
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT3.png" alt="Certificación">
+                </div>
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" alt="Logo COFEPRIS">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
