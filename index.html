@@ -16,6 +16,7 @@
             --whatsapp: #25D366;
             --facebook: #1877F2;
             --instagram: #E4405F;
+            --youtube: #FF0000;
             --email: #EA4335;
             --phone: #34A853;
             --map: #4285F4;
@@ -125,11 +126,12 @@
         .btn-location-alt { background-color: var(--map-alt); color: #333; }
         .btn-facebook { background-color: var(--facebook); }
         .btn-instagram { background-color: var(--instagram); }
+        .btn-youtube { background-color: var(--youtube); }
 
-        /* Certificaciones resaltadas */
+        /* Sección de Certificaciones */
         .certs-section {
             margin-top: 30px;
-            padding: 20px 15px;
+            padding: 20px 10px;
             border-top: 1px solid #eee;
             background-color: #fafbfc;
             border-radius: 16px;
@@ -146,28 +148,36 @@
 
         .certs-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .certs-grid-duo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .cert-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70px;
+            height: 60px;
             background: white;
-            padding: 5px;
-            border-radius: 8px;
+            padding: 6px;
+            border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
         }
 
         .cert-item img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            /* Se elimina el grayscale para resaltar los logos ISO */
-            filter: none;
             transition: transform 0.3s ease;
         }
 
@@ -184,14 +194,13 @@
         <div class="logo-container">
             <img src="https://procontrolmexico.com/wp-content/uploads/2021/05/logo_procontrol_grande.png" 
                  alt="Logo Procontrol" 
-                 class="logo"
-                 onerror="this.src='https://via.placeholder.com/200x80?text=Procontrol'">
+                 class="logo">
         </div>
 
+        <!-- Botones de Acción -->
         <div class="button-grid">
             <div class="section-label">WhatsApp</div>
             
-            <!-- Botón WhatsApp CDMX -->
             <a href="https://wa.me/525539084233?text=Hola%2C%20me%20interesa%20consultar%20tus%20servicios" class="btn btn-whatsapp" target="_blank">
                 <i data-lucide="message-square"></i>
                 <div class="btn-text">
@@ -200,7 +209,6 @@
                 </div>
             </a>
 
-            <!-- Botón WhatsApp Yucatán -->
             <a href="https://wa.me/529993923042?text=Hola%2C%20me%20interesa%20consultar%20tus%20servicios" class="btn btn-whatsapp" target="_blank">
                 <i data-lucide="message-square"></i>
                 <div class="btn-text">
@@ -211,7 +219,6 @@
 
             <div class="section-label">Ubicaciones</div>
 
-            <!-- Botón Ubicación Matriz -->
             <a href="https://www.google.com/maps/search/HP4V%2B7R+Cdad.+L%C3%B3pez+Mateos,+Estado+de+M%C3%A9xico" target="_blank" class="btn btn-location">
                 <i data-lucide="map-pin"></i>
                 <div class="btn-text">
@@ -220,7 +227,6 @@
                 </div>
             </a>
 
-            <!-- Botón Ubicación Mérida -->
             <a href="https://maps.app.goo.gl/78hWenschpWatF3a6" target="_blank" class="btn btn-location-alt">
                 <i data-lucide="map"></i>
                 <div class="btn-text">
@@ -231,40 +237,62 @@
 
             <div class="section-label">Redes Sociales</div>
 
-            <!-- Botón Facebook -->
             <a href="https://www.facebook.com/procontrolmex/?locale=es_LA" target="_blank" class="btn btn-facebook">
                 <i data-lucide="facebook"></i> Facebook
             </a>
 
-            <!-- Botón Instagram -->
             <a href="https://www.instagram.com/procontrol_mexico/" target="_blank" class="btn btn-instagram">
                 <i data-lucide="instagram"></i> Instagram
             </a>
+
+            <a href="https://youtu.be/JoUvrDk5TIs" target="_blank" class="btn btn-youtube">
+                <i data-lucide="youtube"></i> YouTube
+            </a>
         </div>
 
-        <!-- Sección de Certificaciones Resaltada -->
+        <!-- SECCIÓN DE CERTIFICACIONES -->
         <div class="certs-section">
             <div class="certs-title">Certificaciones</div>
+            
+            <!-- Primera línea: Certificaciones ISO -->
             <div class="certs-grid">
                 <div class="cert-item">
-                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT1.png" alt="Certificación ISO">
+                    <img src="https://github.com/gavainc/Procontrol-Mexico/blob/main/14001%202015.png?raw=true" alt="ISO 14001:2015">
                 </div>
                 <div class="cert-item">
-                    <img src="https://procontrolmexico.com/wp-content/uploads/elementor/thumbs/certificaciones_procontrol_2023-q69yf0ne65szvadhx7amt0og7upod0uiu1g4n0je1c.png" alt="Certificación ISO 2023">
+                    <img src="https://github.com/gavainc/Procontrol-Mexico/blob/main/45001%202018.png?raw=true" alt="ISO 45001:2018">
                 </div>
                 <div class="cert-item">
-                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT3.png" alt="Certificación">
+                    <img src="https://github.com/gavainc/Procontrol-Mexico/blob/main/9001%202015.png?raw=true" alt="ISO 9001:2015">
+                </div>
+            </div>
+
+            <!-- Segunda línea: ANPUAC y NPMA -->
+            <div class="certs-grid-duo">
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT1.png" alt="ANPUAC">
                 </div>
                 <div class="cert-item">
-                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" alt="Logo COFEPRIS">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT3.png" alt="NPMA">
+                </div>
+            </div>
+
+            <!-- Tercera línea: Normex y Cofepris -->
+            <div class="certs-grid-duo">
+                <div class="cert-item">
+                    <img src="https://github.com/gavainc/Procontrol-Mexico/blob/main/marca%20de%20conformidad%20NORMEX.png?raw=true" alt="NORMEX">
+                </div>
+                <div class="cert-item">
+                    <img src="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" alt="COFEPRIS">
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Inicializar iconos de Lucide
+        // Inicializar los iconos Lucide
         lucide.createIcons();
     </script>
 </body>
 </html>
+
