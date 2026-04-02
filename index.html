@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procontrol - Tarjeta Digital</title>
-    <!-- Tailwind CSS para diseño moderno -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Iconos Lucide -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -36,9 +36,7 @@
         .bg-instagram { background-color: #E4405F; }
         .bg-youtube { background-color: #FF0000; }
         .bg-pro-blue { background-color: #0056b3; }
-        .text-pro-blue { color: #0056b3; }
 
-        /* Animación suave de entrada */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -46,11 +44,33 @@
         .animate-fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
+
+        /* Animación de parpadeo y movimiento para la flecha */
+        @keyframes blink {
+            0%, 100% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(8px); }
+        }
+        .animate-blink {
+            animation: blink 1.5s infinite ease-in-out;
+        }
+
+        .scroll-indicator {
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            opacity: 1;
+        }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="flex flex-col items-center min-h-screen p-4">
 
-    <div class="w-full max-w-md animate-fade-in">
+    <!-- Indicador de Scroll (Flecha Parpadeante mejorada) -->
+    <div id="scroll-arrow" class="fixed bottom-8 right-8 z-50 scroll-indicator">
+        <div class="animate-blink bg-pro-blue text-white p-3 rounded-full shadow-2xl border-2 border-white/50">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </div>
+
+    <div class="w-full max-w-md animate-fade-in py-8">
         <div class="glass-card rounded-[2.5rem] shadow-2xl overflow-hidden p-8">
             
             <!-- Logo -->
@@ -83,12 +103,13 @@
                 <div>
                     <h2 class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 ml-2">Atención Inmediata</h2>
                     <div class="space-y-2">
-                        <a href="https://wa.me/525539084233?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n" 
+                        <!-- CDMX Actualizado -->
+                        <a href="https://wa.me/525540014294?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n" 
                            class="flex items-center p-4 bg-whatsapp text-white rounded-2xl shadow-lg hover:brightness-110 btn-transition">
                             <i data-lucide="message-circle" class="mr-4"></i>
                             <div class="flex flex-col">
                                 <span class="text-sm font-bold">CDMX e Interior</span>
-                                <span class="text-[10px] opacity-80">55 3908 4233</span>
+                                <span class="text-[10px] opacity-80">55 4001 4294</span>
                             </div>
                         </a>
                         <a href="https://wa.me/529993923042?text=Hola%2C%20necesito%20una%20cotizaci%C3%B3n" 
@@ -127,7 +148,7 @@
                     </div>
                 </div>
 
-                <!-- Redes Sociales Uniformes -->
+                <!-- Redes Sociales -->
                 <div>
                     <h2 class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 ml-2">Síguenos</h2>
                     <div class="space-y-2">
@@ -150,39 +171,22 @@
                 </div>
             </div>
 
-            <!-- Certificaciones Interactivas -->
+            <!-- Certificaciones -->
             <div class="mt-8 pt-6 border-t border-gray-100 bg-gray-50/50 rounded-3xl p-4">
-                <p class="text-[10px] uppercase tracking-widest text-center text-gray-400 font-bold mb-4">Certificaciones (Clic para ampliar)</p>
+                <p class="text-[10px] uppercase tracking-widest text-center text-gray-400 font-bold mb-4">Certificaciones</p>
                 <div class="grid grid-cols-3 gap-3">
-                    <!-- ISO 45001 -->
-                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/45001%202018.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
+                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/45001%202018.png" target="_blank" class="h-12 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
                         <img src="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/45001%202018.png" alt="ISO 45001" class="max-h-full object-contain">
                     </a>
-                    <!-- ISO 14001 -->
-                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/14001%202015.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
+                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/14001%202015.png" target="_blank" class="h-12 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
                         <img src="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/14001%202015.png" alt="ISO 14001" class="max-h-full object-contain">
                     </a>
-                    <!-- ISO 9001 -->
-                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/9001%202015.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
+                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/9001%202015.png" target="_blank" class="h-12 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
                         <img src="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/9001%202015.png" alt="ISO 9001" class="max-h-full object-contain">
                     </a>
-                    
-                    <!-- CERT1 -->
-                    <a href="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT1.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
-                        <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT1.png" alt="Certificación 1" class="max-h-full object-contain">
-                    </a>
-                    <!-- CERT3 -->
-                    <a href="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT3.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
-                        <img src="https://procontrolmexico.com/wp-content/uploads/2021/06/CERT3.png" alt="Certificación 3" class="max-h-full object-contain">
-                    </a>
-                    <!-- NORMEX -->
-                    <a href="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/marca%20de%20conformidad%20NORMEX.png" target="_blank" class="h-16 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
-                        <img src="https://raw.githubusercontent.com/gavainc/Procontrol-Mexico/main/marca%20de%20conformidad%20NORMEX.png" alt="NORMEX" class="max-h-full object-contain">
-                    </a>
                 </div>
-                <!-- COFEPRIS -->
                 <div class="flex justify-center mt-3">
-                    <a href="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" target="_blank" class="h-16 w-1/3 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
+                    <a href="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" target="_blank" class="h-12 w-1/3 bg-white rounded-xl border border-gray-100 p-1 flex items-center justify-center shadow-sm hover:scale-105 btn-transition">
                         <img src="https://procontrolmexico.com/wp-content/uploads/2021/07/Logo_COFEPRIS-1.jpg" alt="COFEPRIS" class="max-h-full object-contain">
                     </a>
                 </div>
@@ -195,6 +199,17 @@
     <script>
         // Inicializar iconos
         lucide.createIcons();
+
+        // Ocultar la flecha cuando el usuario haga scroll hacia abajo
+        window.addEventListener('scroll', function() {
+            const arrow = document.getElementById('scroll-arrow');
+            // Si el scroll baja más de 100px, ocultamos la flecha
+            if (window.scrollY > 100) {
+                arrow.style.opacity = '0';
+            } else {
+                arrow.style.opacity = '1';
+            }
+        });
     </script>
 </body>
 </html>
